@@ -59,6 +59,7 @@ namespace WinFormAppRandomNumberGuessing
 				else
 				{
 					lblDurum.Text = "TEBRİKLER KAZANDINIZ!";
+					lblDurum.BackColor = Color.Green;
 					btnKontrol.Enabled = false;
 				}
 			}
@@ -70,6 +71,7 @@ namespace WinFormAppRandomNumberGuessing
 			{
 				lblDurum.Text = "KAZANAMADINIZ, TEKRAR DENEYİNİZ.";
 				btnKontrol.Enabled = false;
+				lblDurum.BackColor = Color.Red;
 
 
 			}
