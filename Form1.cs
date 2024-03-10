@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace WinFormAppRandomNumberGuessing
 {
+
+	// Amaç: Rastgele sayı üreterek, doğru sayıyı 10 hak içerisinde bulmak
+	// Kazanım: Static olmayan metod çağırmasında ref. instance (miras, kalıtsallık) kullanımı, rastgele sayı çağırma metodu & kullanım alanları (CAPTCHA, sipariş numarası, generator  vb.)
+
 	public partial class Form1 : Form
 	{
 		public Form1()
@@ -25,8 +29,10 @@ namespace WinFormAppRandomNumberGuessing
 			//MessageBox.Show("Başlat!");
 			// TEST: label1.Text = rastgele.ToString();
 
+			//BAŞLAT butonuna basıldığında KONTROL butonu aktif olsun
 			btnKontrol.Enabled = true;
 			btnKontrol.BackColor = Color.PeachPuff;
+
 			Random random = new Random();
 			rastgele = random.Next(0, 100); // Static OLMAYAN Metod
 			sayac = 10;
@@ -36,6 +42,9 @@ namespace WinFormAppRandomNumberGuessing
 
 
 		}
+
+		// Girilen Sayı > rastgele veya Girilen Sayı < Rastgele Sayı ise Sayaç ( 10 Hakkımızdan) Azaltsın.
+		// Sayaç 0'a eşitlendiğinde hakkımız kalmayacağından "KAZANAMADINIZ" yazsın.
 
 		private void btnKontrol_Click(object sender, EventArgs e)
 		{
@@ -79,6 +88,7 @@ namespace WinFormAppRandomNumberGuessing
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			//Kontrol butonu BAŞLAT butonuna basılmadan aktif olmasın
 			btnKontrol.Enabled = false;
 			lblSayac.Text = "10 Hakkınız Var!";
 
